@@ -43,6 +43,11 @@ public class turret : MonoBehaviour
         // if a enemy leaves the attack region, remove it from the enemy list
         if (other.tag == "Enemy")
         {
+            // removes slow effect if an enemy leaves the attack region
+            if (laserEffect)
+            {
+                enemies[0].GetComponent<enemy>().movingSpeed = 10;
+            }
             enemies.Remove(other.gameObject);
         }
     }
@@ -120,6 +125,8 @@ public class turret : MonoBehaviour
             Vector3 pos = transform.position;
             pos.y = enemies[0].transform.position.y;
             laserEffect.transform.LookAt(pos);
+            // create slow effect when laser effect is on an enemy
+            enemies[0].GetComponent<enemy>().movingSpeed = 5;
         }
     }
 
