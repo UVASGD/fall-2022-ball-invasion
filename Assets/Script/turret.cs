@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 
 public class turret : MonoBehaviour
@@ -20,6 +21,7 @@ public class turret : MonoBehaviour
     // special for Laser
     public bool useLaser = false;
     public float damageRate = 10;
+    public float slowRate = 0.7f;
     public LineRenderer laser;
     public GameObject laserEffect;
 
@@ -44,10 +46,12 @@ public class turret : MonoBehaviour
         if (other.tag == "Enemy")
         {
             // removes slow effect if an enemy leaves the attack region
-            if (laserEffect)
+            if (enemies[0] != null && enemies[0].GetComponent<enemy>().slowed)
             {
-                enemies[0].GetComponent<enemy>().movingSpeed = 10;
-            }
+                enemies[0].GetComponent<enemy>().movingSpeed = (int)(enemies[0].GetComponent<enemy>().movingSpeed / slowRate);
+                enemies[0].GetComponent<enemy>().slowed = false;
+            }  
+
             enemies.Remove(other.gameObject);
         }
     }
@@ -126,7 +130,11 @@ public class turret : MonoBehaviour
             pos.y = enemies[0].transform.position.y;
             laserEffect.transform.LookAt(pos);
             // create slow effect when laser effect is on an enemy
-            enemies[0].GetComponent<enemy>().movingSpeed = 5;
+            if (!enemies[0].GetComponent<enemy>().slowed)
+            {
+                enemies[0].GetComponent<enemy>().movingSpeed = (int)(enemies[0].GetComponent<enemy>().movingSpeed * slowRate);
+                enemies[0].GetComponent<enemy>().slowed = true;
+            }
         }
     }
 

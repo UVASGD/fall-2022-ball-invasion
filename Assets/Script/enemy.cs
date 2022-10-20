@@ -15,6 +15,9 @@ public class enemy : MonoBehaviour
     private float hp;
     public int onDieAward = 100;
 
+    // slowed property for laser
+    public bool slowed = false;
+
     public GameObject explosionEffectPrefab;
 
     public Slider hpSlider;
