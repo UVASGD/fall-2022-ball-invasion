@@ -19,12 +19,16 @@ public class enemy : MonoBehaviour
 
     public Slider hpSlider;
 
+    private Transform tempTransform;
+
 
     // Start is called before the first frame update
     void Start()
     {
         hp = totalHp;
         positions = wayPoints.positions;
+        tempTransform = transform.Find("temp").GetComponent<Transform>();
+        tempTransform.LookAt(positions[0]);
     }
 
     // Update is called once per frame
@@ -46,6 +50,10 @@ public class enemy : MonoBehaviour
         if (Vector3.Distance(positions[idx].position, transform.position) < 0.4f)
         {
             idx++;
+            if (idx < positions.Length)
+            {
+                tempTransform.LookAt(positions[idx]);
+            }
         }
     }
 
