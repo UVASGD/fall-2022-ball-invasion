@@ -1,16 +1,16 @@
 ﻿<Properties StartupConfiguration="{B5E32794-A661-F49B-CB21-852DAD69AC92}|">
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/enemy.cs">
     <Files>
-      <File FileName="Assets/Script/enemy.cs" Line="69" Column="35" />
+      <File FileName="Assets/Script/enemy.cs" Line="91" Column="33" />
       <File FileName="Assets/Script/Props/Freeze.cs" />
       <File FileName="Assets/Script/gameManager.cs" />
-      <File FileName="Assets/Script/buildManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/buildManager.cs" />
       <File FileName="Assets/Script/mapCube.cs" />
-      <File FileName="Assets/Script/turret.cs" Line="117" Column="49" />
+      <File FileName="Assets/Script/turret.cs" />
       <File FileName="Assets/Script/turretData.cs" />
       <File FileName="Assets/Script/upgradeController.cs" />
-      <File FileName="Assets/Script/enemySpawner.cs" Line="1" Column="1" />
-      <File FileName="Assets/Script/bullet.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/enemySpawner.cs" />
+      <File FileName="Assets/Script/bullet.cs" />
       <File FileName="Assets/Script/GameMenu.cs" />
       <File FileName="Assets/Script/wave.cs" />
       <File FileName="Assets/Script/wayPoints.cs" />
@@ -32,7 +32,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="32ff2def-ef7e-4095-96e9-c6ff0ba889f3" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="4607f10f-fff7-426c-8d6a-dccdf866d025" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
