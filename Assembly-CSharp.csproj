@@ -70,6 +70,7 @@
     <Compile Include="Assets/Script/enemy.cs" />
     <Compile Include="Assets/Script/Props/Freeze.cs" />
     <Compile Include="Assets/Script/viewController.cs" />
+    <Compile Include="Assets/Script/LevelMenu.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
