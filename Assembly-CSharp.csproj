@@ -60,9 +60,12 @@
      <Compile Include="Assets\Script\wayPoints.cs" />
      <Compile Include="Assets\Script\enemy.cs" />
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
      <Compile Include="Assets\Script\Props\Freeze.cs" />
      <Compile Include="Assets\Script\viewController.cs" />
 =======
+=======
+>>>>>>> Stashed changes
      <Compile Include="Assets\Script\bomb.cs" />
      <Compile Include="Assets\Script\ExplosionDamage.cs" />
      <Compile Include="Assets\Script\Props\Freeze.cs" />
@@ -88,6 +91,9 @@
      <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.28f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
