@@ -16,6 +16,7 @@ public class enemy : MonoBehaviour
     public int onDieAward = 100;
 
     public GameObject explosionEffectPrefab;
+    public GameObject addMoneyEffectPrefab;
 
     public Slider hpSlider;
 
@@ -29,6 +30,7 @@ public class enemy : MonoBehaviour
         positions = wayPoints.positions;
         tempTransform = transform.Find("temp").GetComponent<Transform>();
         tempTransform.LookAt(positions[0]);
+        addMoneyEffectPrefab.transform.Find("Canvas").Find("MoneyText").GetComponent<Text>().text = "+$" + onDieAward;
     }
 
     // Update is called once per frame
@@ -83,8 +85,10 @@ public class enemy : MonoBehaviour
     {
         // die and generate dying effect
         GameObject effect = GameObject.Instantiate(explosionEffectPrefab, transform.position, transform.rotation);
+        GameObject addMoney = GameObject.Instantiate(addMoneyEffectPrefab, transform.position, Quaternion.identity);
         Destroy(this.gameObject);
         Destroy(effect, 1.5f);
+        Destroy(addMoney, 1.5f);
         buildManager.instance.updateMoney(onDieAward);
     }
 }

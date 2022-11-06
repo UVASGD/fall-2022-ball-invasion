@@ -9,6 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 0689ec8901c094bc7b8bc2a1b17d3d82
   - enabled: 1
+    path: Assets/Scenes/Levels.unity
+    guid: 847fac9701500488784a933e2b3b90df
+  - enabled: 1
     path: Assets/Scenes/MainScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/ZihanScene.unity
+    guid: ecea66b524434462b9618321549be610
   m_configObjects: {}
