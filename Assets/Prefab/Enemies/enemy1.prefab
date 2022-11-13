@@ -264,6 +264,7 @@ MonoBehaviour:
   totalHp: 150
   onDieAward: 100
   explosionEffectPrefab: {fileID: 4315934056264893495, guid: 553d68b1453de4bc4a2b3b62b20e0441, type: 3}
+  addMoneyEffectPrefab: {fileID: 1961481529354538679, guid: 7037af0fd46f5459ba74ffb3a6efd6f2, type: 3}
   hpSlider: {fileID: 3697625840241558163}
 --- !u!1 &5552643618075373492
 GameObject:

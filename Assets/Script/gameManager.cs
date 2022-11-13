@@ -10,6 +10,7 @@ public class gameManager : MonoBehaviour
 {
     
     public GameObject endUI;
+    public GameObject pauseUI;
     // "You win" if won, "Game Over" if failed
     public Text endText;
 
@@ -48,5 +49,18 @@ public class gameManager : MonoBehaviour
     {
         // load the first scene, which is the menu
         SceneManager.LoadScene(0);
+    }
+
+
+    public void OnPauseButtonDown()
+    {
+        pauseUI.SetActive(true);
+        Time.timeScale = 0;
+    }
+
+    public void onResumeButtonDown()
+    {
+        pauseUI.SetActive(false);
+        Time.timeScale = 1;
     }
 }
