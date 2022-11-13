@@ -12,6 +12,8 @@ public class buildManager : MonoBehaviour
     public turretData laserData;
     public turretData missleData;
     public turretData standardData;
+    public turretData freezingData;
+    public turretData bombData;
 
     private turretData selectedTurret;
 
@@ -41,6 +43,7 @@ public class buildManager : MonoBehaviour
 
     private void Update()
     {
+        
         if (Input.GetMouseButtonDown(0))
         {
             // when the left key is down
@@ -107,6 +110,22 @@ public class buildManager : MonoBehaviour
         if (IsOn)
         {
             selectedTurret = standardData;
+        }
+    }
+
+    public void OnFreezingSelected(bool IsOn)
+    {
+        if(IsOn)
+        {
+            selectedTurret = freezingData;
+        }
+    }
+
+    public void OnBombSelected(bool IsOn)
+    {
+        if(IsOn)
+        {
+            selectedTurret = bombData;
         }
     }
 
