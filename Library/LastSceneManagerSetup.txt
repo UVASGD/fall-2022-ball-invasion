@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/TommyScene.unity
+- path: Assets/Scenes/JimmyTesting.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
