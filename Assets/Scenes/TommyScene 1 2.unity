@@ -6181,7 +6181,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 58.13, y: 0, z: 0}
 --- !u!114 &963194229
 MonoBehaviour:
@@ -13328,6 +13328,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endUI: {fileID: 2102762489}
+  pauseUI: {fileID: 0}
   endText: {fileID: 709317042}
 --- !u!1001 &1940426612
 PrefabInstance:
