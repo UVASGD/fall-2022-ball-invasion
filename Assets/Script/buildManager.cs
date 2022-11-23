@@ -12,10 +12,12 @@ public class buildManager : MonoBehaviour
     public turretData laserData;
     public turretData missleData;
     public turretData standardData;
-    public turretData freezingData;
-    public turretData bombData;
+
+    public propData freezingData;
+    public propData bombData;
 
     private turretData selectedTurret;
+    private propData selectedProp;
 
     // controller of upgrading tool
     private upgradeController controller; 
@@ -43,57 +45,88 @@ public class buildManager : MonoBehaviour
 
     private void Update()
     {
-        
-        if (Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButtonDown(0) && EventSystem.current.IsPointerOverGameObject() == false)
         {
-            // when the left key is down
-            if (EventSystem.current.IsPointerOverGameObject() == false)
+            if(selectedTurret != null)
             {
-                // if pointer is not on the UI, do the following things
-                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                RaycastHit hit;
-                bool isCollider = Physics.Raycast(ray, out hit, 1000, LayerMask.GetMask("MapCube"));
-                if (isCollider)
+                SpawnTurret();
+            }
+            if(selectedProp != null)
+            {
+                SpawnProp();
+            }
+            
+        }    
+    }
+
+    public void SpawnTurret()
+    {
+        
+        // if pointer is not on the UI, do the following things
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+        bool isCollider = Physics.Raycast(ray, out hit, 1000, LayerMask.GetMask("MapCube"));
+        if (isCollider)
+        {
+            mapCube MapCube = hit.collider.GetComponent<mapCube>();
+            if (selectedTurret != null && MapCube.turretGo == null)
+            {
+                // if mouse hit a mapCube with no turret on it, then we build a turret
+                if (money >= selectedTurret.cost)
                 {
-                    mapCube MapCube = hit.collider.GetComponent<mapCube>();
-                    if (selectedTurret != null && MapCube.turretGo == null)
-                    {
-                        // if mouse hit a mapCube with no turret on it, then we build a turret
-                        if (money >= selectedTurret.cost)
-                        {
-                            updateMoney(-selectedTurret.cost);
-                            MapCube.BuildTurret(selectedTurret);
-                        }
-                        else
-                        {
-                            // if lack money, trigger money animation
-                            moneyAnimator.SetTrigger("flick");
-                        }
-                    }
-                    else if (MapCube.turretGo != null)
-                    {
-                        // if mouse hit a mapCube with turret, then we do upgrading
-                        if (MapCube == selectedMapCube && controller.upgradeCanvas.activeInHierarchy)
-                        {
-                            StartCoroutine(controller.HideUpgradeUI());
-                        }
-                        else
-                        {
-                            controller.ShowUpgradeUI(MapCube, MapCube.isUpgraded);
-                            selectedMapCube = MapCube;
-                        }
-                    }
+                    updateMoney(-selectedTurret.cost);
+                    MapCube.BuildTurret(selectedTurret);
                 }
+                else
+                {
+                    // if lack money, trigger money animation
+                    moneyAnimator.SetTrigger("flick");
+                }
+            }
+            else if (MapCube.turretGo != null)
+            {
+                // if mouse hit a mapCube with turret, then we do upgrading
+                if (MapCube == selectedMapCube && controller.upgradeCanvas.activeInHierarchy)
+                {
+                    StartCoroutine(controller.HideUpgradeUI());
+                }
+                else
+                {
+                    controller.ShowUpgradeUI(MapCube, MapCube.isUpgraded);
+                    selectedMapCube = MapCube;
+                }
+            }
+        }
+            
+        
+    }
+
+    public void SpawnProp()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+        bool isCollider = Physics.Raycast(ray, out hit, 1000, LayerMask.GetMask("Road"));
+        if (isCollider)
+        {
+            if(money >= selectedProp.cost)
+            {
+                updateMoney(-selectedProp.cost);
+                Instantiate(selectedProp.propPrefab, hit.point, Quaternion.identity);
+            }
+            else
+            {
+                moneyAnimator.SetTrigger("flick");
             }
         }
     }
 
-    // methods for turret selections
+    // methods for turret and prop selections
     public void OnLaserSelected(bool IsOn)
     {
         if (IsOn)
         {
             selectedTurret = laserData;
+            selectedProp = null;
         }
     }
 
@@ -102,6 +135,7 @@ public class buildManager : MonoBehaviour
         if (IsOn)
         {
             selectedTurret = missleData;
+            selectedProp = null;
         }
     }
 
@@ -110,6 +144,7 @@ public class buildManager : MonoBehaviour
         if (IsOn)
         {
             selectedTurret = standardData;
+            selectedProp = null;
         }
     }
 
@@ -117,7 +152,8 @@ public class buildManager : MonoBehaviour
     {
         if(IsOn)
         {
-            selectedTurret = freezingData;
+            selectedProp = freezingData;
+            selectedTurret = null;
         }
     }
 
@@ -125,7 +161,8 @@ public class buildManager : MonoBehaviour
     {
         if(IsOn)
         {
-            selectedTurret = bombData;
+            selectedProp = bombData;
+            selectedTurret = null;
         }
     }
 
