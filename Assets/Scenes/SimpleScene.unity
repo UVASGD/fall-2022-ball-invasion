@@ -230,18 +230,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves:
-  - enemyPrefab: {fileID: 558889062562461174, guid: a7d4ab3e678614b72b7c192471254448, type: 3}
+  - enemyPrefab: {fileID: 558889062562461174, guid: f5dd3ef0db79e4e4796c5f2bd8bd657a, type: 3}
     count: 1
     rate: 0
   - enemyPrefab: {fileID: 558889062562461174, guid: f5dd3ef0db79e4e4796c5f2bd8bd657a, type: 3}
     count: 3
     rate: 0.5
-  - enemyPrefab: {fileID: 3329214036102669513, guid: f94954728b3984135a625e7de7c9a282, type: 3}
+  - enemyPrefab: {fileID: 8256171079400394844, guid: d2294962ec46a43e7b450065a17775a9, type: 3}
     count: 6
     rate: 1
-  - enemyPrefab: {fileID: 3329214036102669513, guid: 4470154c3655a46eea04bd7c2b53601f, type: 3}
-    count: 10
-    rate: 1.5
+  - enemyPrefab: {fileID: 4709098422612684698, guid: 9ee584d77a3584eb3b9d452686e582c9, type: 3}
+    count: 3
+    rate: 1
   START: {fileID: 75433210}
   waveRate: 1
 --- !u!4 &21144139

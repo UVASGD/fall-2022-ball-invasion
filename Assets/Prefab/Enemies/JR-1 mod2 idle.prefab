@@ -890,6 +890,7 @@ MonoBehaviour:
   totalHp: 150
   onDieAward: 100
   explosionEffectPrefab: {fileID: 4315934056264893495, guid: 6218dd01ab66a422faeb048a88b5f864, type: 3}
+  addMoneyEffectPrefab: {fileID: 0}
   hpSlider: {fileID: 8317958035116183252}
 --- !u!135 &5812996664160893857
 SphereCollider:
