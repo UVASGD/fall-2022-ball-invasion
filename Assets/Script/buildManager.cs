@@ -31,10 +31,14 @@ public class buildManager : MonoBehaviour
 
     public static buildManager instance;
 
+    public GameObject buildCanvas;
+    private Animator buildAnimator;
+
     private void Start()
     {
         instance = this;
         controller = GetComponent<upgradeController>();
+        buildAnimator = buildCanvas.GetComponent<Animator>();
     }
 
     public void updateMoney(int change = 0)
@@ -72,15 +76,14 @@ public class buildManager : MonoBehaviour
             if (selectedTurret != null && MapCube.turretGo == null)
             {
                 // if mouse hit a mapCube with no turret on it, then we build a turret
-                if (money >= selectedTurret.cost)
+                if (MapCube == selectedMapCube && buildCanvas.activeInHierarchy)
                 {
-                    updateMoney(-selectedTurret.cost);
-                    MapCube.BuildTurret(selectedTurret);
+                    StartCoroutine(HideBuildUI());
                 }
                 else
                 {
-                    // if lack money, trigger money animation
-                    moneyAnimator.SetTrigger("flick");
+                    ShowBuildUI(MapCube);
+                    selectedMapCube = MapCube;
                 }
             }
             else if (MapCube.turretGo != null)
@@ -92,6 +95,7 @@ public class buildManager : MonoBehaviour
                 }
                 else
                 {
+                    StartCoroutine(HideBuildUI());
                     controller.ShowUpgradeUI(MapCube, MapCube.isUpgraded);
                     selectedMapCube = MapCube;
                 }
@@ -188,4 +192,36 @@ public class buildManager : MonoBehaviour
         selectedMapCube.DestroyTurret();
         StartCoroutine(controller.HideUpgradeUI());
     }
+
+    public void OnBuildButtonDown()
+    {
+        int buildCost = selectedTurret.cost;
+        if (money < buildCost)
+        {
+            moneyAnimator.SetTrigger("flick");
+            ShowBuildUI(selectedMapCube);
+        }
+        else
+        {
+            updateMoney(-buildCost);
+            selectedMapCube.BuildTurret(selectedTurret);
+            StartCoroutine(HideBuildUI());
+        }
+    }
+
+    public void ShowBuildUI(mapCube mc)
+    {
+        controller.upgradeCanvas.SetActive(false);
+        buildCanvas.SetActive(false);
+        buildCanvas.SetActive(true);
+        buildCanvas.GetComponent<Transform>().position = mc.transform.position;
+    }
+
+    public IEnumerator HideBuildUI()
+    {
+        buildAnimator.SetTrigger("Hide");
+        yield return new WaitForSeconds(0.5f);
+        buildCanvas.SetActive(false);
+    }
 }
+
