@@ -35,7 +35,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Portal
-    second: {instanceID: 0}
+    second: {fileID: 2100000, guid: d64ce6404bac3c742bb2f64bf1357e18, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

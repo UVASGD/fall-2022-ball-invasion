@@ -572,7 +572,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 736, y: -486}
+  m_AnchoredPosition: {x: 736, y: -535}
   m_SizeDelta: {x: 643.5121, y: 292.1413}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1131961925
@@ -597,7 +597,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 20e3ceac693c39445910d48f9fe52259, type: 3}
-    m_FontSize: 90
+    m_FontSize: 110
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -608,7 +608,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "BALL \nINVASION"
+  m_Text: 'Age of
+
+    AIs'
 --- !u!222 &1131961926
 CanvasRenderer:
   m_ObjectHideFlags: 0
