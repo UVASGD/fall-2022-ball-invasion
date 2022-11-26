@@ -37,6 +37,7 @@ public class Freeze : MonoBehaviour
         Vector3 effectPosition = transform.position;
         effectPosition.y = 0;
         GameObject SnowFlake = GameObject.Instantiate(snowFlakeEffect, effectPosition, Quaternion.identity);
+        SnowFlake.layer = LayerMask.NameToLayer("Ignore Raycast");
         GameObject Explosion = GameObject.Instantiate(explodeEffect, effectPosition, Quaternion.identity);
         this.transform.Find("Sphere").gameObject.SetActive(false);
         Destroy(Explosion, 1);
