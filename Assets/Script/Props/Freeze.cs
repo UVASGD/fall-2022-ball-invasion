@@ -6,9 +6,8 @@ public class Freeze : MonoBehaviour
 {
     public float waitTime = 0.2f;
     public float range = 10;
-    public float freezeTime = 2;
-    public float slowTime = 3;
-    public float slowRate = 0.3f;
+    public float freezeTime = 2f;
+    public float slowTime = 3f;
 
     public GameObject snowFlakeEffect;
     public GameObject explodeEffect;
@@ -29,9 +28,7 @@ public class Freeze : MonoBehaviour
     IEnumerator FreezeEnemy()
     {
         Collider[] EnemyColliders = Physics.OverlapSphere(transform.position, range);
-        List<enemy> Enemies = new List<enemy>();
-        List<int> speeds = new List<int>();
-
+  
         // Wait for 0.1 second and then produce effects
         yield return new WaitForSeconds(waitTime);
         Vector3 effectPosition = transform.position;
@@ -42,34 +39,20 @@ public class Freeze : MonoBehaviour
         this.transform.Find("Sphere").gameObject.SetActive(false);
         Destroy(Explosion, 1);
 
-        // freeze enemies for freezeTime
+        // freeze enemies for freezeTime and slow down enemies for slowTime
         foreach (Collider Enemy in EnemyColliders)
         {
             if (Enemy.tag == "Enemy")
             {
-                Enemies.Add(Enemy.GetComponent<enemy>());
-                speeds.Add(Enemy.GetComponent<enemy>().movingSpeed);
-                Enemy.GetComponent<enemy>().movingSpeed = 0;
+                Enemy.GetComponent<enemy>().freezeCountDown = freezeTime;
+                Enemy.GetComponent<enemy>().slowCountDown = slowTime;
             }
         }
-        yield return new WaitForSeconds(freezeTime);
-        
-        // slow down enemies for slowTime
-        for (int i = 0; i < Enemies.Count; i++)
-        {
-            Enemies[i].movingSpeed = (int)Mathf.Ceil(speeds[i] * (1 - slowRate));
-        }
-        yield return new WaitForSeconds(slowTime);
 
+        yield return new WaitForSeconds(freezeTime + slowTime);
         // snowFlakeEffect disappear
         SnowFlake.GetComponent<Animator>().SetTrigger("Disappear");
         Destroy(SnowFlake, .5f);
-
-        // resume normal speed
-        for (int i = 0; i < Enemies.Count; i++)
-        {
-            Enemies[i].movingSpeed = speeds[i];
-        }
 
         Destroy(gameObject, 1);
     }

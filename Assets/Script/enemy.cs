@@ -7,6 +7,7 @@ public class enemy : MonoBehaviour
 {
 
     public int movingSpeed = 10;
+    private int originalSpeed;
     // the road points that enemies follow
     private Transform[] positions;
     private int idx = 0;
@@ -22,6 +23,9 @@ public class enemy : MonoBehaviour
 
     private Transform tempTransform;
 
+    public float slowCountDown = 0;
+    public float freezeCountDown = 0;
+
 
     // Start is called before the first frame update
     void Start()
@@ -31,12 +35,30 @@ public class enemy : MonoBehaviour
         tempTransform = transform.Find("temp").GetComponent<Transform>();
         tempTransform.LookAt(positions[0]);
         addMoneyEffectPrefab.transform.Find("Canvas").Find("MoneyText").GetComponent<Text>().text = "+$" + onDieAward;
+        originalSpeed = movingSpeed;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(freezeCountDown > 0)
+        {
+            movingSpeed = 0;
+            freezeCountDown -= Time.deltaTime;
+        }
+        else if(slowCountDown > 0)
+        {
+            movingSpeed = (int)Mathf.Ceil(originalSpeed * 0.7f);
+            slowCountDown -= Time.deltaTime;
+        }
+        else
+        {
+            movingSpeed = originalSpeed;
+        }
         Move();
+
+        freezeCountDown = Mathf.Max(freezeCountDown, 0);
+        slowCountDown = Mathf.Max(slowCountDown, 0);
     }
 
     void Move()
