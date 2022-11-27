@@ -10,7 +10,7 @@ public class enemy : MonoBehaviour
     private int originalSpeed;
     // the road points that enemies follow
     private Transform[] positions;
-    private int idx = 0;
+    public int idx = 0;
 
     public float totalHp = 150;
     private float hp;
@@ -33,7 +33,7 @@ public class enemy : MonoBehaviour
         hp = totalHp;
         positions = wayPoints.positions;
         tempTransform = transform.Find("temp").GetComponent<Transform>();
-        tempTransform.LookAt(positions[0]);
+        tempTransform.LookAt(positions[idx]);
         addMoneyEffectPrefab.transform.Find("Canvas").Find("MoneyText").GetComponent<Text>().text = "+$" + onDieAward;
         originalSpeed = movingSpeed;
     }
