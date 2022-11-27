@@ -68,7 +68,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 70}
-  m_SizeDelta: {x: 160, y: 20}
+  m_SizeDelta: {x: 200, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6080526743198310495
 MonoBehaviour:
@@ -398,8 +398,9 @@ GameObject:
   - component: {fileID: 4331637104703549246}
   - component: {fileID: 8781344691968627028}
   - component: {fileID: 6310535487527061702}
+  - component: {fileID: 2590432920537541722}
   m_Layer: 10
-  m_Name: enemy5
+  m_Name: Boss
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -414,7 +415,7 @@ Transform:
   m_GameObject: {fileID: 5881316779278537106}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 1457354270422056598}
   - {fileID: 1934191016199746600}
@@ -433,12 +434,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 774bd4efebff04ec3a83451185f903d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movingSpeed: 10
-  totalHp: 150
+  movingSpeed: 1
+  idx: 0
+  totalHp: 10000
   onDieAward: 100
   explosionEffectPrefab: {fileID: 4315934056264893495, guid: 6218dd01ab66a422faeb048a88b5f864, type: 3}
   addMoneyEffectPrefab: {fileID: 1961481529354538679, guid: 7037af0fd46f5459ba74ffb3a6efd6f2, type: 3}
   hpSlider: {fileID: 6080526743198310495}
+  slowCountDown: 0
+  freezeCountDown: 0
 --- !u!135 &6310535487527061702
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -452,6 +456,23 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2590432920537541722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5881316779278537106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffe360aa8ee3d44788bde7fcac2f96f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  generateWaitTime: 15
+  smallEnemies:
+  - {fileID: 8256171079400394844, guid: d2294962ec46a43e7b450065a17775a9, type: 3}
+  - {fileID: 4709098422612684698, guid: 9ee584d77a3584eb3b9d452686e582c9, type: 3}
+  - {fileID: 558889062562461174, guid: f5dd3ef0db79e4e4796c5f2bd8bd657a, type: 3}
 --- !u!1 &6319349906261606828
 GameObject:
   m_ObjectHideFlags: 0
