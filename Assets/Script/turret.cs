@@ -112,9 +112,11 @@ public class turret : MonoBehaviour
         }
         if (enemies.Count > 0)
         {
+            enemy curEnemy = enemies[0].GetComponent<enemy>();
             // set two ends of the laser to turret and enemy
             laser.SetPositions(new Vector3[] {firePosition.position, enemies[0].transform.position});
-            enemies[0].GetComponent<enemy>().TakeDamage(damageRate * Time.deltaTime);
+            curEnemy.TakeDamage(damageRate * Time.deltaTime);
+            curEnemy.slowCountDown = Mathf.Max(curEnemy.slowCountDown, 0.5f);
             // use laser effect
             laserEffect.transform.position = enemies[0].transform.position;
             Vector3 pos = transform.position;
