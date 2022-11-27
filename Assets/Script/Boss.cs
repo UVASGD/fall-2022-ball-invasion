@@ -18,7 +18,10 @@ public class Boss : MonoBehaviour
 
     private void Update()
     {
-        generateEnemyCountDown -= Time.deltaTime;
+        if(transform.GetComponent<enemy>().freezeCountDown <= 0)
+        {
+            generateEnemyCountDown -= Time.deltaTime;
+        }
         if(generateEnemyCountDown <= 0)
         {
             generateEnemyCountDown = generateWaitTime;

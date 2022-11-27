@@ -11,8 +11,7 @@ public class gameManager : MonoBehaviour
     
     public GameObject endUI;
     public GameObject pauseUI;
-    // "You win" if won, "Game Over" if failed
-    public Text endText;
+    public GameObject winUI;
 
     public static gameManager Instance;
 
@@ -26,9 +25,7 @@ public class gameManager : MonoBehaviour
 
     public void Win()
     {
-        endUI.SetActive(true);
-        endText.text = "YOU WIN";
-        endText.color = Color.yellow;
+        winUI.SetActive(true);
     }
 
     public void Fail()
@@ -36,8 +33,6 @@ public class gameManager : MonoBehaviour
         // stop generating enemies after failing the game
         spawner.Stop();
         endUI.SetActive(true);
-        endText.text = "GAME OVER";
-        endText.color = Color.white;
     }
 
     public void OnReplayButtonDown()
@@ -62,5 +57,10 @@ public class gameManager : MonoBehaviour
     {
         pauseUI.SetActive(false);
         Time.timeScale = 1;
+    }
+
+    public void onNextButtonDown()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
