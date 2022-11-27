@@ -59,7 +59,7 @@ public class buildManager : MonoBehaviour
             {
                 SpawnProp();
             }
-            
+            upgradeTurret();
         }    
     }
 
@@ -86,7 +86,22 @@ public class buildManager : MonoBehaviour
                     selectedMapCube = MapCube;
                 }
             }
-            else if (MapCube.turretGo != null)
+        }
+            
+        
+    }
+
+
+    public void upgradeTurret()
+    {
+        // if pointer is not on the UI, do the following things
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+        bool isCollider = Physics.Raycast(ray, out hit, 1000, LayerMask.GetMask("MapCube"));
+        if (isCollider)
+        {
+            mapCube MapCube = hit.collider.GetComponent<mapCube>();
+            if (MapCube.turretGo != null)
             {
                 // if mouse hit a mapCube with turret, then we do upgrading
                 if (MapCube == selectedMapCube && controller.upgradeCanvas.activeInHierarchy)
@@ -101,9 +116,8 @@ public class buildManager : MonoBehaviour
                 }
             }
         }
-            
-        
     }
+
 
     public void SpawnProp()
     {
