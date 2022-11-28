@@ -665,7 +665,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1931387648}
         m_TargetAssemblyTypeName: gameManager, Assembly-CSharp
         m_MethodName: OnPauseButtonDown
         m_Mode: 1
