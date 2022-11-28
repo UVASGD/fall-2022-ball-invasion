@@ -7486,7 +7486,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  m_IsOn: 0
+  m_IsOn: 1
 --- !u!1 &1068706120
 GameObject:
   m_ObjectHideFlags: 0
@@ -9255,7 +9255,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1931387646}
         m_TargetAssemblyTypeName: buildManager, Assembly-CSharp
         m_MethodName: OnBuildButtonDown
         m_Mode: 1
@@ -13337,18 +13337,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves:
-  - enemyPrefab: {fileID: 5881316779278537106, guid: 003a0ef11018c7046ba063c5f2ca5d4f, type: 3}
-    count: 1
-    rate: 0
-  - enemyPrefab: {fileID: 3329214036102669513, guid: 74aabac0672194a29b886f4dcfcc8a60, type: 3}
+  - enemyPrefab: {fileID: 558889062562461174, guid: f5dd3ef0db79e4e4796c5f2bd8bd657a, type: 3}
     count: 3
-    rate: 0.5
-  - enemyPrefab: {fileID: 3329214036102669513, guid: f94954728b3984135a625e7de7c9a282, type: 3}
-    count: 6
+    rate: 2
+  - enemyPrefab: {fileID: 558889062562461174, guid: a7d4ab3e678614b72b7c192471254448, type: 3}
+    count: 5
     rate: 1
-  - enemyPrefab: {fileID: 3329214036102669513, guid: 4470154c3655a46eea04bd7c2b53601f, type: 3}
+  - enemyPrefab: {fileID: 8256171079400394844, guid: d2294962ec46a43e7b450065a17775a9, type: 3}
     count: 10
-    rate: 1.5
+    rate: 1
+  - enemyPrefab: {fileID: 558889062562461174, guid: a7d4ab3e678614b72b7c192471254448, type: 3}
+    count: 12
+    rate: 1
+  - enemyPrefab: {fileID: 4709098422612684698, guid: 9ee584d77a3584eb3b9d452686e582c9, type: 3}
+    count: 15
+    rate: 0.5
   START: {fileID: 1068706124}
   waveRate: 1
 --- !u!4 &1931387645
@@ -13387,7 +13390,7 @@ MonoBehaviour:
     turretPrefab: {fileID: 63815870516371791, guid: 55583673d57ee4ca8904fc6541d43f25, type: 3}
     cost: 100
     upgradedPrefab: {fileID: 7969192611236552723, guid: 52e79a57def264488949eb20fc391ace, type: 3}
-    upgradeCost: 250
+    upgradeCost: 150
     type: 0
   standardData:
     turretPrefab: {fileID: 4249845380852636431, guid: 518c8194941ef4ef78423d44dba2bd15, type: 3}
@@ -13438,7 +13441,6 @@ MonoBehaviour:
   endUI: {fileID: 1972763747}
   pauseUI: {fileID: 998154887}
   winUI: {fileID: 1144891308}
-  endText: {fileID: 167550096}
 --- !u!205 &1948987689
 LODGroup:
   m_ObjectHideFlags: 0

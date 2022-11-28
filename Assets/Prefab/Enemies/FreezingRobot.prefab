@@ -146,9 +146,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 774bd4efebff04ec3a83451185f903d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movingSpeed: 6
+  movingSpeed: 7
   idx: 0
-  totalHp: 400
+  totalHp: 360
   onDieAward: 100
   explosionEffectPrefab: {fileID: 4315934056264893495, guid: 6218dd01ab66a422faeb048a88b5f864, type: 3}
   addMoneyEffectPrefab: {fileID: 1961481529354538679, guid: 7037af0fd46f5459ba74ffb3a6efd6f2, type: 3}
