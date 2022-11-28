@@ -563,11 +563,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movingSpeed: 12
+  idx: 0
   totalHp: 150
-  onDieAward: 100
+  onDieAward: 60
   explosionEffectPrefab: {fileID: 4315934056264893495, guid: 6218dd01ab66a422faeb048a88b5f864, type: 3}
   addMoneyEffectPrefab: {fileID: 1961481529354538679, guid: 7037af0fd46f5459ba74ffb3a6efd6f2, type: 3}
   hpSlider: {fileID: 558889061939919205}
+  slowCountDown: 0
+  freezeCountDown: 0
 --- !u!135 &1088523411664688932
 SphereCollider:
   m_ObjectHideFlags: 0

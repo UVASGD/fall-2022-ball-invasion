@@ -10,7 +10,6 @@ public class Boss : MonoBehaviour
     public List<GameObject> smallEnemies;
     private int enemyId = 0;
 
-
     private void Start()
     {
         generateEnemyCountDown = generateWaitTime;
@@ -36,6 +35,7 @@ public class Boss : MonoBehaviour
         {
             GameObject e = GameObject.Instantiate(enemyPrefab, transform.position, Quaternion.identity);
             e.GetComponent<enemy>().idx = transform.GetComponent<enemy>().idx;
+            enemySpawner.enemyAlive++;
             yield return new WaitForSeconds(1);
         }
     }

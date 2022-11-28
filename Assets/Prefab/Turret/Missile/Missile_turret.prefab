@@ -83,6 +83,7 @@ MonoBehaviour:
   useLaser: 0
   damageRate: 10
   laser: {fileID: 0}
+  laserEffect: {fileID: 0}
 --- !u!1 &2482014575665716792
 GameObject:
   m_ObjectHideFlags: 0

@@ -306,3 +306,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 3298767921588977398, guid: 1ad024b82592f423092260608ae7dda6, type: 3}
   firePosition: {fileID: 6714178843072488339}
   head: {fileID: 4206916461852942677}
+  useLaser: 0
+  damageRate: 10
+  laser: {fileID: 0}
+  laserEffect: {fileID: 0}

@@ -213,11 +213,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f89f2f75fc7004f1085a0bfba70b125d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemies: []
   attackRate: 1
   bulletPrefab: {fileID: 3452995366404918982, guid: 23a5d56764c2547bc8495256366e4378, type: 3}
   firePosition: {fileID: 3246482960626728713}
   head: {fileID: 3041484322582244869}
+  useLaser: 0
+  damageRate: 10
+  laser: {fileID: 0}
+  laserEffect: {fileID: 0}
 --- !u!135 &454598262976965782
 SphereCollider:
   m_ObjectHideFlags: 0

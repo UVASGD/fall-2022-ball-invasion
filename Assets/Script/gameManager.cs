@@ -43,6 +43,7 @@ public class gameManager : MonoBehaviour
     public void OnMenuButtonDown()
     {
         // load the first scene, which is the menu
+        Time.timeScale = 1;
         SceneManager.LoadScene(0);
     }
 

@@ -26,8 +26,7 @@ public class Freeze : MonoBehaviour
     }
 
     IEnumerator FreezeEnemy()
-    {
-        Collider[] EnemyColliders = Physics.OverlapSphere(transform.position, range);
+    { 
   
         // Wait for 0.1 second and then produce effects
         yield return new WaitForSeconds(waitTime);
@@ -38,6 +37,7 @@ public class Freeze : MonoBehaviour
         GameObject Explosion = GameObject.Instantiate(explodeEffect, effectPosition, Quaternion.identity);
         this.transform.Find("Sphere").gameObject.SetActive(false);
         Destroy(Explosion, 1);
+        Collider[] EnemyColliders = Physics.OverlapSphere(transform.position, range);
 
         // freeze enemies for freezeTime and slow down enemies for slowTime
         foreach (Collider Enemy in EnemyColliders)

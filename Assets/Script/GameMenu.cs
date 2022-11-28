@@ -20,4 +20,9 @@ public class GameMenu : MonoBehaviour
         Application.Quit();
 #endif
     }
+
+    public void OnCreditsButtonDown()
+    {
+        SceneManager.LoadScene(7);
+    }
 }

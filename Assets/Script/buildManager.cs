@@ -39,6 +39,7 @@ public class buildManager : MonoBehaviour
         instance = this;
         controller = GetComponent<upgradeController>();
         buildAnimator = buildCanvas.GetComponent<Animator>();
+        selectedTurret = laserData;
     }
 
     public void updateMoney(int change = 0)
