@@ -54,7 +54,7 @@ public class mapCube : MonoBehaviour
     private void OnMouseEnter()
     {
         // if the mouse is on the mapCube
-        if (turretGo == null && EventSystem.current.IsPointerOverGameObject() == false)
+        if (turretGo == null && EventSystem.current.IsPointerOverGameObject() == false && buildManager.turretSelected == true)
         {
             // if there is not a turret on it and mouse is not on UI, then we use red color to mark it
             renderer.material.color = Color.red;

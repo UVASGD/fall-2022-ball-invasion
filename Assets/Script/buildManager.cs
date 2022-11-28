@@ -18,6 +18,7 @@ public class buildManager : MonoBehaviour
 
     private turretData selectedTurret;
     private propData selectedProp;
+    public static bool turretSelected;
 
     // controller of upgrading tool
     private upgradeController controller; 
@@ -40,6 +41,7 @@ public class buildManager : MonoBehaviour
         controller = GetComponent<upgradeController>();
         buildAnimator = buildCanvas.GetComponent<Animator>();
         selectedTurret = laserData;
+        turretSelected = true;
     }
 
     public void updateMoney(int change = 0)
@@ -144,6 +146,7 @@ public class buildManager : MonoBehaviour
     {
         if (IsOn)
         {
+            turretSelected = true;
             selectedTurret = laserData;
             selectedProp = null;
         }
@@ -153,6 +156,7 @@ public class buildManager : MonoBehaviour
     {
         if (IsOn)
         {
+            turretSelected = true;
             selectedTurret = missleData;
             selectedProp = null;
         }
@@ -162,6 +166,7 @@ public class buildManager : MonoBehaviour
     {
         if (IsOn)
         {
+            turretSelected = true;
             selectedTurret = standardData;
             selectedProp = null;
         }
@@ -171,6 +176,7 @@ public class buildManager : MonoBehaviour
     {
         if(IsOn)
         {
+            turretSelected = false;
             selectedProp = freezingData;
             selectedTurret = null;
         }
@@ -180,6 +186,7 @@ public class buildManager : MonoBehaviour
     {
         if(IsOn)
         {
+            turretSelected = false;
             selectedProp = bombData;
             selectedTurret = null;
         }
