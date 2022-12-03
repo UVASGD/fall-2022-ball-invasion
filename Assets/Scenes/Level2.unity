@@ -4176,7 +4176,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 292746702, guid: d536fa71dd00cf349a228e41212ace48, type: 3}
       propertyPath: lines.Array.size
-      value: 7
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 292746702, guid: d536fa71dd00cf349a228e41212ace48, type: 3}
       propertyPath: lines.Array.data[0]
@@ -4206,7 +4206,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 292746702, guid: d536fa71dd00cf349a228e41212ace48, type: 3}
       propertyPath: lines.Array.data[6]
-      value: Now, continue to kill more AIs!!!!
+      value: Put the props on the purple road and it will create magical effects!
+      objectReference: {fileID: 0}
+    - target: {fileID: 292746702, guid: d536fa71dd00cf349a228e41212ace48, type: 3}
+      propertyPath: lines.Array.data[7]
+      value: Now, continue to kill more AIs!
+      objectReference: {fileID: 0}
+    - target: {fileID: 292746702, guid: d536fa71dd00cf349a228e41212ace48, type: 3}
+      propertyPath: lines.Array.data[8]
+      value: Kill them all!!!
       objectReference: {fileID: 0}
     - target: {fileID: 4094011683184476936, guid: d536fa71dd00cf349a228e41212ace48, type: 3}
       propertyPath: m_Name
