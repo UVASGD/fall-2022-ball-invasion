@@ -21,11 +21,20 @@ public class enemySpawner : MonoBehaviour
     // start or end generating enemies
     private void Start()
     {
-        coroutine = StartCoroutine(SpawnEnemy());
+        if(FindObjectOfType<dialogueRunner>()){
+            
+        }else{
+            coroutine = StartCoroutine(SpawnEnemy());
+        }
+        
     }
     public void Stop()
     {
         StopCoroutine(coroutine);
+    }
+
+    public void startSpawning(){
+        coroutine = StartCoroutine(SpawnEnemy());
     }
 
     IEnumerator SpawnEnemy()
