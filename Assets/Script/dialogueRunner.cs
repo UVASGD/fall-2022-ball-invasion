@@ -16,7 +16,10 @@ public class dialogueRunner : MonoBehaviour
         foreach(string line in lines){
             dialogList.Add(new DialogData(line, "Scientist"));
         }
-        dialogList.Last().Callback = () => {FindObjectOfType<enemySpawner>().startSpawning();};
+        dialogList.Last().Callback = () => {
+            FindObjectOfType<enemySpawner>().startSpawning();
+            Destroy(gameObject);
+            };
         manager.Show(dialogList);
     }
 
