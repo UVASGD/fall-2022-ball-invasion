@@ -12,7 +12,7 @@ public class Boss : MonoBehaviour
 
     private void Start()
     {
-        generateEnemyCountDown = generateWaitTime;
+        generateEnemyCountDown = generateWaitTime/2;
     }
 
     private void Update()
@@ -24,14 +24,14 @@ public class Boss : MonoBehaviour
         if(generateEnemyCountDown <= 0)
         {
             generateEnemyCountDown = generateWaitTime;
-            StartCoroutine(generate(smallEnemies[enemyId]));
+            StartCoroutine(generate(smallEnemies[enemyId], 6-enemyId));
             enemyId = (enemyId + 1) % smallEnemies.Count;
         }
     }
 
-    IEnumerator generate(GameObject enemyPrefab)
+    IEnumerator generate(GameObject enemyPrefab, int k)
     {
-        for(int i=0; i<3; i++)
+        for(int i=0; i<k; i++)
         {
             GameObject e = GameObject.Instantiate(enemyPrefab, transform.position, Quaternion.identity);
             e.GetComponent<enemy>().idx = transform.GetComponent<enemy>().idx;

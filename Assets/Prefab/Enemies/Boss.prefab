@@ -436,7 +436,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movingSpeed: 1
   idx: 0
-  totalHp: 5000
+  totalHp: 10000
   onDieAward: 0
   explosionEffectPrefab: {fileID: 4315934056264893495, guid: 6218dd01ab66a422faeb048a88b5f864, type: 3}
   addMoneyEffectPrefab: {fileID: 1961481529354538679, guid: 7037af0fd46f5459ba74ffb3a6efd6f2, type: 3}
@@ -471,8 +471,9 @@ MonoBehaviour:
   generateWaitTime: 15
   smallEnemies:
   - {fileID: 8256171079400394844, guid: d2294962ec46a43e7b450065a17775a9, type: 3}
-  - {fileID: 4709098422612684698, guid: 9ee584d77a3584eb3b9d452686e582c9, type: 3}
   - {fileID: 558889062562461174, guid: f5dd3ef0db79e4e4796c5f2bd8bd657a, type: 3}
+  - {fileID: 4709098422612684698, guid: 9ee584d77a3584eb3b9d452686e582c9, type: 3}
+  - {fileID: 5352893985396112074, guid: 52641ffbb91948349a72ecfa393b4bd4, type: 3}
 --- !u!1 &6319349906261606828
 GameObject:
   m_ObjectHideFlags: 0
