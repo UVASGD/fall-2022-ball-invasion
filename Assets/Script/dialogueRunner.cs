@@ -23,9 +23,4 @@ public class dialogueRunner : MonoBehaviour
         manager.Show(dialogList);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
