@@ -610,7 +610,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Age of
 
-    AIs'
+    AI'
 --- !u!222 &1131961926
 CanvasRenderer:
   m_ObjectHideFlags: 0
